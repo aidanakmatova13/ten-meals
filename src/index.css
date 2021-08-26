@@ -1,3 +1,6 @@
 *{
     text-decoration: none;
 }
+a{
+    color: inherit; /*берет цвет у родителя*/
+}

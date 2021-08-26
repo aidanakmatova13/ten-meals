@@ -1,12 +1,12 @@
-import {Link, useParams} from "react-router-dom"
+import {useParams} from "react-router-dom";
 import {useEffect,useState} from "react";
 import axios from "axios";
 
 const MealDetails = () => {
     const [meal, setMeal] = useState({})
-    const [ings, setIngs] = useState([])
-
     const params = useParams()
+
+    const [ings, setIngs] = useState([])
 
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`)
