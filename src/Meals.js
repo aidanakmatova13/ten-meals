@@ -7,11 +7,11 @@ const Meals = () => {
     useEffect(() => {
         axios("https://www.themealdb.com/api/json/v2/1/randomselection.php")
             .then(({data}) => setMeals(data.meals))
-    },[])
+    },[]) //сегда массив
 
     return (
         <div>
-            Meals:
+            Meals list:
             {
                 meals.map(item =>
                     <p key={item.id}>

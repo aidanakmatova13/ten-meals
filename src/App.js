@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <Route exact path ='/'><Meals/></Route>
-      <Route path ='/mealdetails/i=:id'><MealDetails/></Route>
+      <Route path ='/meals/i=:id'><MealDetails/></Route>
     </Router>
   );
 }
