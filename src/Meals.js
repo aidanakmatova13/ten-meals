@@ -25,5 +25,4 @@ const Meals = () => {
         </div>
     );
 };
-
 export default Meals;
