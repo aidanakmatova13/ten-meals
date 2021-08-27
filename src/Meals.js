@@ -4,10 +4,11 @@ import {Link} from "react-router-dom";
 
 const Meals = () => {
     const [meals, setMeals] = useState([])
+
     useEffect(() => {
         axios("https://www.themealdb.com/api/json/v2/1/randomselection.php")
             .then(({data}) => setMeals(data.meals))
-    },[]) //сегда массив
+    },[])
 
     return (
         <div>
@@ -22,7 +23,7 @@ const Meals = () => {
                 )
             }
         </div>
-    )
-}
+    );
+};
 
 export default Meals;
