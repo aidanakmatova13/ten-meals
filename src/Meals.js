@@ -16,23 +16,23 @@ const Meals = () => {
     }
     return (
         <div >
-            <h1 className='menu-title'>Menu List</h1>
+            <div className='title'>
+                <h1 className='menu-title'>Menu List</h1>
 
-            <div className='search'>
-                <input onChange={handaleInput} type='text' placeholder='Search...'/>
-                <Link to={`/browse/${smeals}`} className='search-link'>Search</Link>
+                <div className='search'>
+                    <input onChange={handaleInput} type='text' placeholder='Search...'/>
+                    <Link to={`/browse/${smeals}`} className='search-link'>Search</Link>
 
+                </div>
             </div>
             <div className='row'>
                 {
                     meals.map(item =>
 
                         <Link to={`/meal/${item.strMeal}`}>
-                            <div key={item.idMeal} className='box'>
-                                <img className='menu' src={item.strMealThumb} alt='#' width='150'/>
-                                <div>
-                                    <h3 >{item.strArea}</h3>
-                                </div>
+                            <div key={item.idMeal} className='col'>
+                                <img className='menu' src={item.strMealThumb} alt='#' width='200'/>
+                                <h3 >{item.strArea}</h3>
                             </div>
                         </Link>
                     )

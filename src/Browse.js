@@ -11,13 +11,13 @@ const Browse  = () =>{
     },[searchMealsParams])
 
     return (
-        <div>
+        <div className='row'>
 
             {
                 searchMeals.map( item =>
                     <div>
                         <img src={item.strMealThumb} alt='#' width='200'/>
-                        {item.strMeal}
+                        <h4>{item.strMeal}</h4>
                     </div>
 
                 )

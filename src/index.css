@@ -1,6 +1,15 @@
 *{
     text-decoration: none;
+    box-sizing: border-box;
 }
 a{
     color: inherit; /*берет цвет у родителя*/
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.title{
+    text-align: center;
+    margin-bottom: 20px;
 }

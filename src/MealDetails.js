@@ -36,14 +36,17 @@ const MealDetails = () => {
                 </div>
 
             }
+            <h3>Ingredients:</h3>
+            <div className='row'>
             {
                 ingredient.map(item =>
-                    <div>
-                        <img src={`https://www.themealdb.com/images/ingredients/${item}.png`} alt='#' width='50'/>
+                    <>
+                        <img src={`https://www.themealdb.com/images/ingredients/${item}.png`} alt='#' width='100'/>
                         <p>{item}</p>
-                    </div>
+                    </>
                 )
             }
+            </div>
 
         </div>
     )
