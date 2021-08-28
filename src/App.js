@@ -6,9 +6,10 @@ import Header from "./Header";
 function App() {
     return (
         <>
+            <Header/>
         <BrowserRouter>
-            <Route exact path='/'><Header/></Route>
-            <Route exact path='/'><Meals/></Route>             <Route path='/meal/:id'><MealDetails/></Route>
+            <Route exact path='/'><Meals/></Route>
+            <Route path='/meal/:id'><MealDetails/></Route>
             <Route path='/browse/:name'><Browse/></Route>
         </BrowserRouter>
         </>
