@@ -5,7 +5,8 @@ const Header =() =>{
         <div>
             <img/>
             <ul>
-                <Link to ='/'>Home</Link>
+                <li>home</li>
+                <li>home</li>
             </ul>
         </div>
     )
