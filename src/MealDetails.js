@@ -37,31 +37,21 @@ const MealDetails = () => {
 
     return (
         <div>
-            <button onClick={Back}>Go back</button>
+            <button onClick={Back}>&laquo; Go back</button>
             {
-                <div>
-                    <div className='mealDetails-title'>
-                        <h3>{mealDetails.strMeal}</h3>
-                    </div>
-                    <div className='mealDetails-right-left-side'>
-                        <div className='mealDetails-left-side'>
-                            <img className='mealDetails-img' src={mealDetails.strMealThumb} alt='#' width='200'/>
-                            {
-                                ingredient.map(item =>
-
-
-                                    <Link to={`/ingredient/${item}`}>
-                                        <div>
-                                            <img src={`https://www.themealdb.com/images/ingredients/${item}.png`}
-                                                 alt='#' width='50'/>
-
-                                        </div>
-                                        <p className='ingredient-title'>{item}</p>
-                                    </Link>
-                                )
-                            }
-                        </div>
-                        <div className='youtube-instructions'>
+                <>
+                    <h1 className='ing-title'>{mealDetails.strMeal}</h1>
+                    <img className='mealDetails-img' src={mealDetails.strMealThumb} alt='#'/>
+                    {
+                        ingredient.map(item =>
+                                <Link to={`/ingredient/${item}`}>
+                                    <img className='ing-img' src={`https://www.themealdb.com/images/ingredients/${item}.png`}
+                                         alt='#'/>
+                                    <h3 className='ings-title'>{item}</h3>
+                                </Link>
+                        )
+                    }
+                    <div className='youtube-instructions'>
                             <div>
                                 <iframe width="315" height="200" src={`https://www.youtube.com/embed/${youTube}`}
                                         title="YouTube video player"
@@ -76,15 +66,8 @@ const MealDetails = () => {
                                 <p> {mealDetails.strInstructions}</p>
                             </div>
                         </div>
-                    </div>
-
-
-                </div>
-
+                </>
             }
-            {
-            }
-
         </div>
     )
 }

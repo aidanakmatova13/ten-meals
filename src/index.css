@@ -5,11 +5,68 @@
 a{
     color: inherit; /*берет цвет у родителя*/
 }
-.row{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
+img{
+    width: 100%;
 }
-.title{
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+.row{
+    /*display: grid;*/
+    /*grid-template-columns: repeat(5,1fr);*/
+    /*grid-gap: 20px;*/
+    display: flex;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+}
+.col-3{
+    width: 25%;
+    padding: 0 15px;
+}
+body, button{
+    font-family: 'Dancing Script', cursive;
+    /*font-family: 'Staatliches', cursive;*/
+    background-color: #333333;
+}
+.top{
     text-align: center;
+    margin-bottom: 25px;
+}
+.menu-title, h3, h1{
+    color: whitesmoke;
+}
+input{
+    border: 1px solid black;
+    font-size: 19px;
+    border-radius: 10px;
+    padding: 7px;
+    margin-right: 10px;
+    transition: .6s;
+}
+.box{
+    transition: .6s;
+    height: 350px;
+    padding: 10px;
     margin-bottom: 20px;
+}
+.box:hover{
+    box-shadow: -1px -5px 32px 0 rgba(255, 255, 255, 0.2);
+    transform: scale(0.9);
+}
+button{
+    border: 1px solid black;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+.back-btn{
+    margin-bottom: 20px;
+}
+.ing-title{
+    text-align: center;
+}
+.mealDetails-img, .ing-img{
+    width: 200px;
 }

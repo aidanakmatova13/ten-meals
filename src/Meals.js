@@ -21,26 +21,24 @@ const Meals = () => {
         }
     }
     return (
-        <div >
-            <h1 className='menu-title'>Menu</h1>
-
-            <div className='search'>
+        <div className='container'>
+            <div className='top'>
+                <h1 className='menu-title'>TOP 10 Dishes<br/> from the Menu </h1>
                 <input className='search-input' onChange={handleInput} type='text' placeholder='type...'/>
-                <button onClick={Search}>Search</button>
-
+                <button onClick={Search}>Search &#8634; </button>
             </div>
             <div className='row'>
                 {
                     meals.map(item =>
 
-                        <Link to={`/meal/${item.strMeal}`}>
-                            <div key={item.idMeal} className='box'>
+                        <div className='col-3'>
+                            <div className='box'>
+                            <Link to={`/meal/${item.strMeal}`} key={item.idMeal}>
                                 <img className='menu ' src={item.strMealThumb} alt='#' width='150'/>
-                                <div >
-                                    <h3 >{item.strMeal}</h3>
-                                </div>
+                                <h2 className='menu-title'>{item.strMeal}</h2>
+                            </Link>
                             </div>
-                        </Link>
+                        </div>
                     )
                 }
             </div>

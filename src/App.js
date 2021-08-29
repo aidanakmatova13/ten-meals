@@ -3,6 +3,7 @@ import Meals from "./Meals";
 import MealDetails from "./MealDetails";
 import Browse from "./Browse";
 import Ings from "./Ings";
+
 function App() {
     return (
         <>
