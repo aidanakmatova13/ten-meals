@@ -36,42 +36,42 @@ const MealDetails = () => {
     }
 
     return (
-        <div>
+        <div className='container'>
             <button onClick={Back}>&laquo; Go back</button>
             {
                 <>
                     <h1 className='ing-title'>{mealDetails.strMeal}</h1>
-                    <img className='mealDetails-img' src={mealDetails.strMealThumb} alt='#'/>
+                    <div className='details-top'>
+                        <img className='ing-img' src={mealDetails.strMealThumb} alt='#'/>
+                        <div className='instr-title'>
+                            <h3>Instructions</h3>
+                            <p> {mealDetails.strInstructions}</p>
+                        </div>
+                        <iframe width="315" height="200" src={`https://www.youtube.com/embed/${youTube}`}
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen>
+                        </iframe>
+                    </div>
+                    <h3>Ingredients:</h3>
+                    <div className='row'>
                     {
                         ingredient.map(item =>
-                                <Link to={`/ingredient/${item}`}>
-                                    <img className='ing-img' src={`https://www.themealdb.com/images/ingredients/${item}.png`}
-                                         alt='#'/>
-                                    <h3 className='ings-title'>{item}</h3>
-                                </Link>
+                            <Link to={`/ingredient/${item}`}>
+                                    <div className='col-3'>
+                                        <img className='ings-img' src={`https://www.themealdb.com/images/ingredients/${item}.png`} alt='#'/>
+                                        <h3 className='ings-title'>{item}</h3>
+                                    </div>
+                            </Link>
                         )
                     }
-                    <div className='youtube-instructions'>
-                            <div>
-                                <iframe width="315" height="200" src={`https://www.youtube.com/embed/${youTube}`}
-                                        title="YouTube video player"
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen>
-
-                                </iframe>
-                            </div>
-                            <div className='mealDetails-right-side'>
-                                <h3>Instructions</h3>
-                                <p> {mealDetails.strInstructions}</p>
-                            </div>
-                        </div>
+                </div>
                 </>
             }
         </div>
     )
 }
-
 export default MealDetails
 
 

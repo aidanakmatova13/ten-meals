@@ -9,7 +9,7 @@ img{
     width: 100%;
 }
 .container{
-    max-width: 1140px;
+    max-width: 1170px;
     margin: auto;
 }
 .row{
@@ -33,7 +33,7 @@ body, button{
     text-align: center;
     margin-bottom: 25px;
 }
-.menu-title, h3, h1{
+.menu-title, h3, h1, p, h2{
     color: whitesmoke;
 }
 input{
@@ -65,8 +65,26 @@ button{
     margin-bottom: 20px;
 }
 .ing-title{
-    text-align: center;
+    text-align: center;}
+.ing-img{
+    width: 250px;
+    margin-right: 30px;
 }
-.mealDetails-img, .ing-img{
-    width: 200px;
+.ings-title{
+    font-size: 19px;
+    color: whitesmoke;
+}
+.ings-img{
+    width: 100px;
+}
+.details-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.instr-title{
+    margin-right: 30px;
+}
+.ing{
+    text-align: center;
 }

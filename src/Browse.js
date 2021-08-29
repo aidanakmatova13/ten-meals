@@ -21,13 +21,13 @@ const Browse  = () => {
         history.goBack()
     }
     return (
-        <>
+        <div className='container'>
             <button className='back-btn' onClick={Back}>&laquo; Go back</button>
             <div className='row'>
 
                 {
                     searchMeals.map(item =>
-                        <div>
+                        <div className='col-3'>
                             <img src={item.strMealThumb} alt='#' width='200'/>
                             <h3>{item.strMeal}</h3>
                         </div>
@@ -35,7 +35,7 @@ const Browse  = () => {
                 }
             </div>
             <div>{error}</div>
-        </>
+        </div>
     )
 }
 

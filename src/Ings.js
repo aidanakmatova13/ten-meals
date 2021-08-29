@@ -18,22 +18,25 @@ const Ings = () => {
     }
 
     return (
-        <div>
-            <button className='ing-back' onClick={Back}>Go back</button>
-            <div className='ingBigImg'>
-                <img  src={`https://www.themealdb.com/images/ingredients/${ingParams.ingredient}.png`} alt='#' width='200'/>
+        <div className='container'>
+            <button className='ing-back' onClick={Back}>&laquo; Go back</button>
+            <div className='ing'>
+                <img className='ing-img'  src={`https://www.themealdb.com/images/ingredients/${ingParams.ingredient}.png`} alt='#' width='200'/>
+                <h2>Dishes that are made from this product:</h2>
             </div>
             <div className='row'>
                 {
                     ingredient.map(el =>
+                        <div className='col-3'>
                         <Link to={`/meal/${el.strMeal}`}>
                             <div className='box'>
                                 <img src={el.strMealThumb} alt='#' width='150'/>
-                                <h4>
+                                <h3>
                                     {el.strMeal}
-                                </h4>
+                                </h3>
                             </div>
                         </Link>
+                        </div>
                     )
                 }
             </div>
