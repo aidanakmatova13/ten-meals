@@ -7,12 +7,12 @@ import {Link, useHistory} from "react-router-dom";
 const MealDetails = () => {
     const [mealDetails, setMealDetails] = useState({})
     const [ingredient, setIngredient] = useState([])
-    const mealDetailsparsms = useParams()
     const [youTube, setYouTube] = useState('')
+    const {id} = useParams()
     const history = useHistory()
 
     useEffect(() => {
-        axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealDetailsparsms.id}`)
+        axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${id}`)
             .then(({data}) => {
                 const obj = data.meals[0]
                 const str = obj.strYoutube
@@ -28,7 +28,7 @@ const MealDetails = () => {
                 setYouTube(str.slice(str.indexOf('v=') + 2, str.length))
 
             })
-    }, [mealDetailsparsms])
+    }, [id])
 
 
     const Back = () => {
