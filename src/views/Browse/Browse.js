@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useHistory, useParams} from "react-router-dom";
+import Search from "../../components/Search/Search";
 
 const Browse  = () => {
     const [searchMeals, setSearchMeals] = useState([])
@@ -9,13 +10,7 @@ const Browse  = () => {
     const history = useHistory()
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchMealsParams.name}`)
-            .then(({data}) => {
-                if (data.meals) {
-                    setSearchMeals(data.meals)
-                } else {
-                    setError('The dish is not found')
-                }
-            })
+            .then(({data}) => data.meals ? setSearchMeals(data.meals) : setError('The dish is not found'))
     }, [searchMealsParams])
     const Back = () => {
         history.goBack()
@@ -23,19 +18,7 @@ const Browse  = () => {
     return (
         <div className='container'>
             <button className='back-btn' onClick={Back}>&laquo; Go back</button>
-            <div className='row'>
-
-                {
-                    searchMeals.map(item =>
-                        <div className='col-3'>
-                            <div className='box'>
-                            <img src={item.strMealThumb} alt='#' width='200'/>
-                            <h3>{item.strMeal}</h3>
-                            </div>
-                        </div>
-                    )
-                }
-            </div>
+            <Search searchMeals={searchMeals}/>
             <div className='error'>{error} &#10008;</div>
         </div>
     )
