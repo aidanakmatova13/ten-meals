@@ -26,13 +26,13 @@ const Ings = () => {
             </div>
             <div className='row'>
                 {
-                    ingredient.map(el =>
+                    ingredient.map(item =>
                         <div className='col-3'>
-                        <Link to={`/meal/${el.strMeal}`}>
+                        <Link to={`/meal/${item.strMeal}`}>
                             <div className='box'>
-                                <img src={el.strMealThumb} alt='#' width='150'/>
+                                <img src={item.strMealThumb} alt='#' width='150'/>
                                 <h3>
-                                    {el.strMeal}
+                                    {item.strMeal}
                                 </h3>
                             </div>
                         </Link>
