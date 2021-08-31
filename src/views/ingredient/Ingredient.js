@@ -1,10 +1,11 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useParams} from 'react-router-dom'
-import {Link,useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import IngredientMeals from "../../components/IngredientMeals/IngredientMeals";
 
 
-const Ings = () => {
+const Ingredient = () => {
     const [ingredient,setIngredient] = useState([])
     const ingParams = useParams()
     const history = useHistory()
@@ -24,24 +25,9 @@ const Ings = () => {
                 <img className='ing-img'  src={`https://www.themealdb.com/images/ingredients/${ingParams.ingredient}.png`} alt='#' width='200'/>
                 <h2>Dishes that are made from this product:</h2>
             </div>
-            <div className='row'>
-                {
-                    ingredient.map(item =>
-                        <div className='col-3'>
-                        <Link to={`/meal/${item.strMeal}`}>
-                            <div className='box'>
-                                <img src={item.strMealThumb} alt='#' width='150'/>
-                                <h3>
-                                    {item.strMeal}
-                                </h3>
-                            </div>
-                        </Link>
-                        </div>
-                    )
-                }
-            </div>
+            <IngredientMeals ingredient={ingredient}/>
         </div>
     )
 }
 
-export default Ings
+export default Ingredient
