@@ -1,8 +1,8 @@
 import {BrowserRouter,Route } from 'react-router-dom'
-import Meals from "./Meals";
-import MealDetails from "./MealDetails";
-import Browse from "./Browse";
-import Ings from "./Ings";
+import Meals from "./views/Meals/Meals";
+import MealDetails from "./views/MealDetail/MealDetails";
+import Browse from "./views/Browse/Browse";
+import Ings from "./views/ingredients/Ings";
 
 function App() {
     return (
