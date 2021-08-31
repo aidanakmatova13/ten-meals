@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {Link,useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import MealsList from "../../components/MealsList/MealsList";
 
 
 const Meals = () => {
@@ -27,20 +28,7 @@ const Meals = () => {
                 <input className='search-input' onChange={handleInput} type='text' placeholder='type...'/>
                 <button onClick={Search}>Search &#8634; </button>
             </div>
-            <div className='row'>
-                {
-                    meals.map(item =>
-                        <div className='col-3'>
-                            <div className='box'>
-                            <Link to={`/meal/${item.strMeal}`} key={item.idMeal}>
-                                <img className='menu ' src={item.strMealThumb} alt='#' width='150'/>
-                                <h2 className='menu-title'>{item.strMeal}</h2>
-                            </Link>
-                            </div>
-                        </div>
-                    )
-                }
-            </div>
+            <MealsList meals = {meals}/>
         </div>
     )
 }
