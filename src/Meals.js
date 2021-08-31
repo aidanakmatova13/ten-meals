@@ -30,7 +30,6 @@ const Meals = () => {
             <div className='row'>
                 {
                     meals.map(item =>
-
                         <div className='col-3'>
                             <div className='box'>
                             <Link to={`/meal/${item.strMeal}`} key={item.idMeal}>
