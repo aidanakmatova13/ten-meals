@@ -88,3 +88,8 @@ button{
 .ing{
     text-align: center;
 }
+.error{
+    font-size: 40px;
+    color: whitesmoke;
+    text-align: center;
+}

@@ -36,7 +36,7 @@ const Browse  = () => {
                     )
                 }
             </div>
-            <div>{error}</div>
+            <div className='error'>{error} &#10008;</div>
         </div>
     )
 }
