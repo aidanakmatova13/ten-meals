@@ -17,7 +17,7 @@
     .container{
         max-width: 450px;
     }
-    .col{
-        width: 100%;
+    .col-3{
+        width: 50%;
     }
 }
