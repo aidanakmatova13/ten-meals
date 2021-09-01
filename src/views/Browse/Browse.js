@@ -6,12 +6,12 @@ import Search from "../../components/Search/Search";
 const Browse  = () => {
     const [searchMeals, setSearchMeals] = useState([])
     const [error, setError] = useState('')
-    const {name} = useParams()
+    const {search} = useParams()
     const history = useHistory()
     useEffect(() => {
-        axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+        axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
             .then(({data}) => data.meals ? setSearchMeals(data.meals) : setError('The dish is not found'))
-    }, [name])
+    }, [search])
     const Back = () => {
         history.goBack()
     }
