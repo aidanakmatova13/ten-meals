@@ -1,16 +1,16 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useHistory, useParams} from "react-router-dom";
-import Search from "../../components/Search/Search";
+import MealsList from "../../components/MealsList/MealsList";
 
 const Browse  = () => {
-    const [searchMeals, setSearchMeals] = useState([])
-    const [error, setError] = useState('')
+    const [meals, setMeals] = useState([])
+    const [error, setError] = useState(false)
     const {name} = useParams()
     const history = useHistory()
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
-            .then(({data}) => data.meals ? setSearchMeals(data.meals) : setError('The dish is not found'))
+            .then(({data}) => data.meals ? setMeals(data.meals) : setError(true))
     }, [name])
     const Back = () => {
         history.goBack()
@@ -18,8 +18,7 @@ const Browse  = () => {
     return (
         <div className='container'>
             <button className='back-btn' onClick={Back}>&laquo; Go back</button>
-            <Search searchMeals={searchMeals}/>
-            <div className='error'>{error} &#10008;</div>
+            {error ? <div className='error'>The dish is not found &#10008;</div> : <MealsList meals = {meals}/>}
         </div>
     )
 }

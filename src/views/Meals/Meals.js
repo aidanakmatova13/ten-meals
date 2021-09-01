@@ -6,19 +6,19 @@ import MealsList from "../../components/MealsList/MealsList";
 
 const Meals = () => {
     const [meals, setMeals] = useState([])
-    const [smeals, setSMeals] = useState('')
+    const [searchMeals, setSearchMeals] = useState('')
     const history = useHistory()
     useEffect(() => {
         axios('https://www.themealdb.com/api/json/v2/1/randomselection.php')
             .then(({data}) => setMeals(data.meals))
     }, [])
     const handleInput = (e) => {
-        setSMeals(e.target.value)
+        setSearchMeals(e.target.value)
 
     }
     const Search  = () => {
-        if (smeals.trim()){
-            history.push(`/browse/${smeals}`)
+        if (searchMeals.trim()){
+            history.push(`/browse/${searchMeals}`)
         }
     }
     return (
